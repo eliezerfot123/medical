@@ -1,7 +1,7 @@
 import pytest
 
-from apps.users.models import User
-from apps.users.tests.factories import UserFactory
+from medical.users.models import User
+from medical.users.tests.factories import UserFactory
 
 
 @pytest.fixture(autouse=True)

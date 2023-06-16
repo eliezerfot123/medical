@@ -273,7 +273,7 @@ tags
 dump.rdb
 
 ### Project template
-apps/media/
+medical/media/
 
 .pytest_cache/
 .ipython/

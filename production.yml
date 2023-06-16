@@ -12,9 +12,9 @@ services:
       context: .
       dockerfile: ./compose/production/django/Dockerfile
 
-    image: apps_production_django
+    image: medical_production_django
     volumes:
-      - production_django_media:/app/apps/media
+      - production_django_media:/app/medical/media
     depends_on:
       - postgres
       - redis
@@ -27,7 +27,7 @@ services:
     build:
       context: .
       dockerfile: ./compose/production/postgres/Dockerfile
-    image: apps_production_postgres
+    image: medical_production_postgres
     volumes:
       - production_postgres_data:/var/lib/postgresql/data
       - production_postgres_data_backups:/backups
@@ -38,7 +38,7 @@ services:
     build:
       context: .
       dockerfile: ./compose/production/traefik/Dockerfile
-    image: apps_production_traefik
+    image: medical_production_traefik
     depends_on:
       - django
     volumes:
@@ -53,24 +53,24 @@ services:
 
   celeryworker:
     <<: *django
-    image: apps_production_celeryworker
+    image: medical_production_celeryworker
     command: /start-celeryworker
 
   celerybeat:
     <<: *django
-    image: apps_production_celerybeat
+    image: medical_production_celerybeat
     command: /start-celerybeat
 
   flower:
     <<: *django
-    image: apps_production_flower
+    image: medical_production_flower
     command: /start-flower
 
   nginx:
     build:
       context: .
       dockerfile: ./compose/production/nginx/Dockerfile
-    image: apps_local_nginx
+    image: medical_local_nginx
     depends_on:
       - django
     volumes:

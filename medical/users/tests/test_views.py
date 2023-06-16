@@ -9,10 +9,10 @@ from django.test import RequestFactory
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 
-from apps.users.forms import UserAdminChangeForm
-from apps.users.models import User
-from apps.users.tests.factories import UserFactory
-from apps.users.views import (
+from medical.users.forms import UserAdminChangeForm
+from medical.users.models import User
+from medical.users.tests.factories import UserFactory
+from medical.users.views import (
     UserRedirectView,
     UserUpdateView,
     user_detail_view,

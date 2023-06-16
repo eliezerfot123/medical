@@ -27,7 +27,7 @@ django.setup()
 
 # -- Project information -----------------------------------------------------
 
-project = "Medical"
+project = "medical"
 copyright = """2023, Eliezer Romero"""
 author = "Eliezer Romero"
 
